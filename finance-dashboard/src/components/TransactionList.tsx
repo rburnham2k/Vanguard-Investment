@@ -4,9 +4,11 @@ import { CATEGORY_METADATA } from '../types';
 interface TransactionListProps {
   transactions: Transaction[];
   viewMode: ViewMode;
+  onEdit: (id: string) => void;
+  onDelete: (id: string) => void;
 }
 
-export function TransactionList({ transactions, viewMode }: TransactionListProps) {
+export function TransactionList({ transactions, viewMode, onEdit, onDelete }: TransactionListProps) {
   const now = new Date();
   const currentMonth = String(now.getMonth() + 1).padStart(2, '0');
   const currentYear = now.getFullYear();
@@ -31,6 +33,7 @@ export function TransactionList({ transactions, viewMode }: TransactionListProps
               <th>Description</th>
               <th>Category</th>
               <th>Amount</th>
+              <th>Actions</th>
             </tr>
           </thead>
           <tbody>
@@ -52,6 +55,14 @@ export function TransactionList({ transactions, viewMode }: TransactionListProps
                     </td>
                     <td className={`td-amount ${t.type === 'income' ? 'amount-income' : 'amount-expense'}`}>
                       {t.type === 'income' ? '+' : '-'}${t.amount.toFixed(2)}
+                    </td>
+                    <td className="td-actions">
+                      <button className="btn-action btn-edit" onClick={() => onEdit(t.id)} title="Edit">
+                        ✏️
+                      </button>
+                      <button className="btn-action btn-delete" onClick={() => onDelete(t.id)} title="Delete">
+                        🗑️
+                      </button>
                     </td>
                   </tr>
                 );
