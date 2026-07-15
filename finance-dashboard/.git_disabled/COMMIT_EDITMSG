@@ -1,0 +1,18 @@
+commit
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+#
+# On branch main
+# Changes to be committed:
+#	new file:   SPRINTS.md
+#	modified:   src/App.tsx
+#	modified:   src/components/Dashboard.tsx
+#	new file:   src/components/HomePage.tsx
+#	new file:   src/components/LearnPage.tsx
+#	new file:   src/components/Navigation.tsx
+#	new file:   src/components/ResourcesPage.tsx
+#	modified:   src/components/SummaryCards.tsx
+#	new file:   src/components/TipsPage.tsx
+#	modified:   src/components/TransactionList.tsx
+#	modified:   src/styles.css
+#
